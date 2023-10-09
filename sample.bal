@@ -7,8 +7,8 @@ type Greeting record {
 };
 
 service / on new http:Listener(8090) {
-    resource function get .(string name) returns Greeting {
-        Greeting greetingMessage = {"from" : "Choreo", "to" : name, "message" : "Welcome to Choreo!"};
+    resource function post .(@http:Payload json jsonObj) returns Greeting {
+        Greeting greetingMessage = {"from" : "Choreo", "to" : (check jsonObj.to), "message" : "Welcome to Choreo!"};
         return greetingMessage;
     }
 }
