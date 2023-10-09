@@ -12,7 +12,7 @@ servers:
 paths:
   /:
     post:
-      operationId: get
+      operationId: post
       parameters:
       - name: name
         in: query
