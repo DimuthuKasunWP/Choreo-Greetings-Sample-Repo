@@ -11,7 +11,7 @@ servers:
       default: "8090"
 paths:
   /:
-    get:
+    post:
       operationId: get
       parameters:
       - name: name
